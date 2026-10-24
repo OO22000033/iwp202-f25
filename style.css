@@ -1,0 +1,268 @@
+/*   تنسيق صفحة  السيارات   */
+.marquee-container {
+  width: 64%;           
+  overflow: hidden;        /* إخفاء النص عندما يخرج عن الحدود */
+    background: linear-gradient(135deg, #f5fbff, #2b376f); 
+     border-radius: 100px; 
+         border:solid red ;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); 
+  padding: 10px 0;
+  white-space: nowrap;     /* منع النص من الانقسام لعدة أسطر */
+}
+.marquee-text {
+  display: inline-block;
+  font-size: 24px;        
+  font-weight: bold;
+  color: #121212;
+  /* تطبيق الحركة: اسم الحركة | مدة الدورة | الخطيّة | التكرار اللانهائي */
+  animation: marquee-animation 10s linear infinite;
+}
+/*  تحديد نقطة بداية ونهاية الحركة */
+@keyframes marquee-animation {
+  0% {
+    transform: translateX(100%); /* البداية: من خارج الشاشة جهة اليمين */
+  }
+  100% {
+    transform: translateX(-100%); /* النهاية: يختفي تماماً جهة اليسار */
+  }
+}
+.car-image {
+    width: 300px;      /* عرض ثابت لكل الصور */
+    height: 200px;     /* ارتفاع ثابت لكل الصور */
+    object-fit: cover; /* لقص الزوائد وجعل الصورة تملأ المساحة دون أي تشوه */
+    border-radius: 8px; /* إطار جمالي دائرتي الأطراف */
+}
+form {
+  width: 380px;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 16px;
+  border: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+form input {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  outline: none;
+  transition: 0.3s;
+  font-size: 14px;
+}
+/* عند الضغط */
+form input:focus
+{
+  border-color: #ff0000;
+  box-shadow: 0 0 6px rgba(63, 31, 31, 0.3);
+}
+.button {
+  width: 22%;
+  padding: 11px;
+  border: solid white;
+  border-radius:  100px;
+
+  background: #ff0000;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.button:hover {
+  background: #ffffff;
+  color: red;
+  border: solid red;
+  transform: translateY(-1px);
+}
+
+/* زر التفاصيل   */
+.qty-t {
+    width: 100px;
+    height: 35px;
+    font-size: 15px;
+    font-weight: bold;
+    border: solid white;
+    border-radius: 100px;
+    cursor: pointer;
+    background-color: #bc1b1b;
+    color: white;
+    transition: 0.2s;
+}
+
+/* عند المرور */
+.qty-t:hover {
+     background: #ffffff;
+  color: red;
+  border: solid red;
+    transform: scale(1.1);
+}
+
+/*  زر الاختيار */
+.car-select {
+    width: 25%;
+    height: 25px;
+}
+/* عند المرور */
+.car-select:hover {
+    transform: scale(1.3);
+}
+
+
+
+
+/*   تنسيق صفحة من نحن   */
+section {
+    max-width: 950px; /* يحدد عرض المحتوى وما يخليه يتمدد كثير */
+    margin: 20px auto; 
+    padding: 50px; 
+    border:solid red ;
+    font-family: Arial, sans-serif; 
+    background: linear-gradient(135deg, #7e7f7f, #2b376f); 
+    border-radius: 100px; 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4); 
+    text-align: center; }
+/* اسم المطعم (h1) */
+section h1 {
+    font-size: 38px; 
+    color: #fbfbfb; 
+    margin-bottom: 5px; 
+    letter-spacing: 1px; /* يوسع الحروف     */}
+/* الوصف الصغير تحت الاسم */
+section  p {     font-size: 20px; 
+    color: #ffffff; 
+    margin-bottom: 20px; }
+/* صندوق الوصف */
+.description {
+    margin: 20px 0; /* مسافة فوق وتحت */
+    padding: 15px; /* مسافة داخلية */
+    background: #2b376f; 
+    border-radius: 100px;  
+}
+/* نص الوصف */
+.description p {
+    font-size: 20px; 
+    color: #ede7e7; 
+    line-height: 1.6; /* تباعد بين الأسطر   */}
+/* عنوان معلومات التواصل */
+.contact h3 { color: rgb(23, 23, 23);
+    text-align: right;
+    margin-top: 25px; /* مسافة فوق العنوان */
+    font-size: 22px; 
+    color: #332d2d; 
+}
+/* كل سطر من معلومات التواصل */
+.contact p {color: rgb(241, 233, 233);
+    text-align: right;
+    font-size: 16px; 
+    background: #2b376f; 
+    margin: 10px auto; 
+    padding: 12px; 
+    width: 100%; 
+    border-radius: 100px; 
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05); 
+    gap: 10px; /* مسافة بين الأيقونة والنص */
+    transition: 0.3s; /* حركة ناعمة عند التغيير */}
+/* تأثير عند المرور بالماوس */
+.contact p:hover {
+    background: #4825d0; 
+    transform: scale(1.03); }
+
+
+
+
+
+/* تحديد إعدادات عامة لكل العناصر  والصفحات*/
+*{
+    margin:0; /* إزالة المسافات الخارجية الافتراضية */
+    padding:0; /* إزالة المسافات الداخلية الافتراضية */
+    box-sizing:border-box; /* يخلي العرض والطول يشملوا البادينغ والحدود */
+    font-family: 'Segoe UI', sans-serif; /* نوع الخط */}
+/* تنسيق الصفحة بالكامل */
+body{
+    height:100vh; /* ارتفاع الصفحة كامل الشاشة */
+    background:#160563; /* لون خلفية أساسي داكن */
+    overflow-x:hidden; /* منع سكرول أفقي */
+    color:white; /* لون النص أبيض */}
+/* خلفية الألوان المتحركة */
+.background{
+    position:fixed; /* تثبيت العنصر بالخلف */
+    width:200%; /* عرض أكبر من الشاشة ليعطي حركة */
+    height:200%; /* ارتفاع أكبر من الشاشة */
+    background: 
+        radial-gradient(circle at 30% 30%, #2b376f, transparent 40%), 
+        radial-gradient(circle at 70% 70%, #453ad7, transparent 40%), 
+        radial-gradient(circle at 50% 50%, #fbfbfb, transparent 40%); 
+    animation: move 15s infinite alternate; /* تشغيل حركة اسمها move */
+    z-index:-1; /* إرسال العنصر للخلف */
+    filter: blur(100px); /* تمويه قوي ليعطي تأثير ناعم */}
+/* تعريف حركة الخلفية */
+@keyframes move{
+    0%{ transform: translate(-15%, -15%) } /* بداية الحركة */
+    100%{ transform: translate(15%, 15%) } /* نهاية الحركة */}
+/* تنسيق الهيدر */
+header {
+    display: flex; /* استخدام نظام الفليكس لتنظيم المحتوى */
+    flex-direction: column; /* تحويل الترتيب من أفقي إلى عمودي لتصبح العناصر تحت بعضها */
+    align-items: center; /* توسيط جميع العناصر في منتصف الشاشة */
+    justify-content: center; /* توسيط المحتوى عمودياً داخل الهيدر */
+    gap: 15px; /* إضافة مسافة فاصلة ومتناسقة بين كل عنصر والذي تحته */
+    padding: 30px 20px; /* مسافات داخلية واسعة لمنح التصميم مساحة للتنفس */
+    background: linear-gradient(135deg, #f5fbff, #2b376f); 
+    border-radius: 0 0 24px 24px; /* انحناء         */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4); /* ظل عميق       */
+    border-bottom: 2px solid #ff0000; /* خط سفلي ملون       */
+}
+/* عنوان الهيدر */
+header h1{
+    font-size:24px; /* حجم الخط */}
+/* الروابط */
+nav a{
+    font-size: 20px;
+    margin-left:20px; /* مسافة بين الروابط */
+    text-decoration:none; /* إزالة الخط تحت الرابط */
+    color:white; /* لون النص */
+    position:relative; /* لحتى نستخدم ::after */}
+/* الخط السفلي المتحرك تحت الرابط */
+nav a::after{
+    content:""; /* عنصر وهمي */
+    position:absolute; /* تحديد موقعه */
+    width:0%; /* يبدأ بدون عرض */
+    height:5px; /* سماكة الخط */
+    background:#ff0000; /* لون الخط */
+    left:0; /* يبدأ من اليسار */
+    bottom:-4px; /* تحت النص */
+    transition:0.3s; /* سرعة الحركة */}
+/* عند تمرير الماوس */
+nav a:hover::after{
+    width:100%; /* الخط يتمدد بالكامل */}
+
+    footer{
+  color: #ffffff;
+    text-align:center; /* توسيط النص */
+    padding:15px; /* مسافة داخلية */
+    background:rgba(0, 0, 0, 0.05); /* خلفية شفافة */
+    border-bottom: 2px solid #ff0000;
+}
+.table {
+  width: 80%; /*عرض الجدول  */
+  margin: 20px auto; /* مسافة من الأعلى والأسفل + توسيط الجدول */
+  border-collapse: collapse; /* دمج الحدود بين الخلايا لتظهر بشكل متصل */
+  font-family: Arial, sans-serif; /* نوع الخط داخل الجدول */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* ظل خفيف حول الجدول  */}
+.table th {
+  background-color: #2f2f30; /* لون خلفية رأس الجدول */
+  color: rgb(234, 230, 230); /* لون النص داخل الرأس */
+  padding: 12px; /* مسافة داخلية داخل الخلية */
+  text-align: center; /* توسيط النص */
+  font-size: 20px; /* حجم الخط */}
+.table td {
+  padding: 12px; /* مسافة داخلية للخلايا */
+  text-align: center; /* توسيط النص داخل الخلية */}
+.table tr:nth-child(even) {
+  background-color: #473db1; /* تلوين الصفوف الزوجية   */}
+.table tr:hover {
+  background-color: #3e3e3e; /* تغيير لون الصف عند مرور الماوس */
+  transition: 0.3s; /* جعل تغيير اللون تدريجي وسلس */}
+.table, th, td {
+border: 1px solid #ff0000; /* إضافة حدود خفيفة للجدول والخلايا */}

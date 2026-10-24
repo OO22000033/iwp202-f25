@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>Meals</title>
+
+<link rel="stylesheet" href="style.css">
+<script src="myFunctions.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!--المكتبة-->
+
+</head>
+
+<body>
+
+<div class="background"></div>
+
+<header >
+<h1> السـيـارات</h1>
+<nav>
+<a href="index.html">الرئيسية</a> 
+<a href="AboutUs.html">من نحن</a> 
+<a href="Cars.html">السيارات</a>
+</nav>
+</header>
+
+<center>
+<section style="height: 10%; padding: 0; margin: 10px;">
+<h1>مكتـب الشامــي</h1>
+<p> 🚘 لتأجيــر السـيــارات</p>
+</section>
+
+ <div class="marquee-container">
+  <div class="marquee-text">  خصم  <samp style="color: rgb(255, 255, 0);">10%</samp> في حال استئجار سيارة اكثر من 7 ايام</div>
+</div>
+</center>
+
+<center>
+<div id="formDiv" style="display:none;">
+<h2>نموذج الطلب</h2>
+<form onsubmit="return validateForm()">
+<input type="text" id="name" placeholder="الاسم الكامل"><br>
+<input type="number" id="nid" placeholder="الرقم الوطني" oninput="detectProvince()"><br>
+<span id="province" style="color:rgb(255, 0, 0);"></span><br>
+<input type="text" id="address" placeholder="موقعك بالتفصيل"><br>
+<input type="text" id="phone" placeholder="رقم الموبايل"><br>
+<div class="form-group">
+    <label style="color: black;" >تاريخ استلام السيارة</label>
+    <input type="date" id="startDate" required>
+</div>
+<div class="form-group">
+    <label style="color: black; " >تاريخ تسليم السيارة</label>
+    <input type="date" id="endDate" required  >
+</div><br>
+<input type="email" id="email" placeholder="الإيميل"><br>
+<button type="submit" class="button" style="width:100%;">إرسال</button>
+</form>
+</div>
+</center>
+
+<table border="1" dir="rtl" class="table">
+<tr>
+<th>الرمز</th>
+<th>اسم السيارة</th>
+<th>السعر</th>
+<th>التفاصيل</th>
+<th>اختيار</th>
+</tr>
+
+<!--  السيارة 1  -->
+<tr>
+<td>CR-001</td>
+<td>   تويوتا كامري (2021)  </td>
+<td>700,000 ل.س </td>
+<td align="center">
+<button onclick="toggleDetails('d1')" class="qty-t" >التفاصيل</button>
+</td>
+<td>
+<input type="checkbox" class="car-select">
+<span class="price" style="display:none;">700000</span>
+</td>
+</tr>
+<tr id="d1" style="display:none;">
+<td colspan="5">
+<pre style="text-align: right; font-size: 30px;">
+<img src="صور/تويوتا كامري (2021).jpg" class="car-image">
+<b>نوع الواقود:بنزين
+ناقل الحركة:أوتوماتيك
+عدد المقاعد:5 مقاعد
+عدد الكيلوميترات:45,000 كم
+اللون:أبيض لؤلؤي</b>
+</pre>
+</td>
+</tr>
+
+<!--  السيارة 2  -->
+<tr>
+<td>CR-002</td>
+<td> هيونداي النترا (2020)  </td>
+<td>490,000 ل.س</td>
+<td align="center">
+<button onclick="toggleDetails('d2')" class="qty-t">التفاصيل</button>
+</td>
+<td>
+<input type="checkbox" class="car-select">
+<span class="price" style="display:none;">490000</span>
+</td>
+</tr>
+<tr id="d2" style="display:none;">
+<td colspan="5">
+<pre style="text-align: right; font-size: 30px;">
+ <img src="صور/هيونداي النترا (2020).jpg" class="car-image">
+<b>نوع الواقود:بنزين
+ناقل الحركة:أوتوماتيك
+عدد المقاعد:5 مقاعد
+عدد الكيلوميترات:62,000 كم
+اللون:فضي </b>
+</pre>
+</td>
+</tr>
+
+<!--  السيارة 3  -->
+<tr>
+<td>CR-003</td>
+<td>   كيا سيراتو (2019)  </td>
+<td>420,000 ل.س </td>
+<td align="center">
+<button onclick="toggleDetails('d3')" class="qty-t">التفاصيل</button>
+</td>
+<td>
+<input type="checkbox" class="car-select">
+<span  class="price" style="display:none;">420000</span>
+</td>
+</tr>
+<tr id="d3" style="display:none;">
+<td colspan="5">
+<pre style="text-align: right; font-size: 30px;">
+ <img src="صور/كيا سيراتو (2019).jpg" class="car-image">
+<b>نوع الواقود:بنزين
+ناقل الحركة:أوتوماتيك
+عدد المقاعد:5 مقاعد
+عدد الكيلوميترات:78,000 كم
+اللون:أسود</b>
+</pre>
+</td>
+</tr>
+
+<!--  السيارة 4  -->
+<tr>
+<td>CR-004</td>
+<td>  كيا سبورتاج (2022) </td>
+<td> 840,000 ل.س</td>
+<td align="center">
+<button onclick="toggleDetails('d4')" class="qty-t">التفاصيل</button>
+</td>
+<td>
+<input type="checkbox" class="car-select">
+<span class="price" style="display:none;">840000</span>
+</td>
+</tr>
+<tr id="d4" style="display:none;">
+<td colspan="5">
+<pre style="text-align: right;font-size: 30px;">
+<img src="صور/كيا سبورتاج (2022).jpg" class="car-image">
+<b>نوع الواقود:بنزين
+ناقل الحركة:أوتوماتيك
+عدد المقاعد:5 مقاعد
+عدد الكيلوميترات:28,000 كم
+اللون:رمادي </b>
+</pre>
+</td>
+</tr>
+
+<!--  السيارة 5  -->
+<tr>
+<td>CR-005</td>
+<td>    يونداي أكسنت (2018)    </td>
+<td>350,000 ل.س </td>
+<td align="center">
+<button onclick="toggleDetails('d5')" class="qty-t">التفاصيل</button>
+</td>
+<td>
+<input type="checkbox" class="car-select">
+<span class="price" style="display:none;">350000</span>
+</td>
+</tr>
+<tr id="d5" style="display:none;">
+<td colspan="5">
+<pre style="text-align: right; font-size: 30px;">
+<img src="صور/يونداي أكسنت (2018).jpg" class="car-image">
+<b>نوع الواقود:بنزين
+ناقل الحركة:أوتوماتيك
+عدد المقاعد:5 مقاعد
+عدد الكيلوميترات:95,000 كم
+اللون:أحمر داكن 
+</b></pre>
+</td>
+</tr>
+
+</table>
+<!-- زر متابعة -->
+<center><button onclick="showForm()" class="button">متابعة</button>
+</center>
+
+</body>
+</html>
